@@ -2,10 +2,10 @@
 const fetch = require('node-fetch')
 
 
-let playerData = fetch("http://lookup-service-prod.mlb.com/json/named.team_all_season.bam?sport_code='mlb'&all_star_sw='N'&sort_order=name_asc&season='2017'")
+fetch("http://lookup-service-prod.mlb.com/json/named.roster_40.bam?team_id='147'")
     .then(res => res.json())
-    .then(data=>console.log(data.team_all_season.queryResults.row))
-/*
+    .then(data=>console.log(data.roster_40.queryResults.row))
+
 Player.deleteMany({})
     .then(()=>{
         Player.create(playerData)
@@ -14,4 +14,3 @@ Player.deleteMany({})
                 process.exit()
             })
     })
-*/
