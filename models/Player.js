@@ -1,6 +1,8 @@
 const mongoose = require('../db/connection')
 
-let Player = new mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const Player = new Schema({
     name_display_first_last: String,
     college: String,
     position_txt: String,
