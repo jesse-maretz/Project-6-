@@ -3,12 +3,14 @@ const mongoose = require('../db/connection')
 const Schema = mongoose.Schema;
 
 const Player = new Schema({
-    name_display_first_last: String,
+    name: String,
     college: String,
-    position_txt: String,
-    jersey_number: Number,
+    position: String,
+    number: Number,
     bats: String,
-    throws: String
+    throws: String,
+    height: String,
+    weight: Number
 })
 
 module.exports = mongoose.model("Player", Player)
