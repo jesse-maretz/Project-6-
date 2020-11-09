@@ -53,9 +53,8 @@ app.get('/players/name/:name',(req,res)=>{
     })
 })
 
+app.set("port", process.env.PORT || 8080);
 
-
-
-app.listen(9002,()=>{
-    console.log('the port i am listening to is over 9000')
-})
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
