@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const Player = require("./models/Player")
-const rosterData = require("./db/data.json")
+const parser = require("body-parser")
 
+app.use(parser.json())
 
 app.get('/',(req,res)=>{
     Player.find({}).then(data=>{
@@ -15,6 +16,11 @@ app.get('/',(req,res)=>{
 
 app.get('/players',(req,res)=>{
     Player.find({}).then(players=>{
+        res.json(players)
+    })
+})
+app.post('/players',(req,res)=>{
+    Player.create(req.body).then(players=>{
         res.json(players)
     })
 })
