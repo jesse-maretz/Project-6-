@@ -34,7 +34,9 @@ app.put('/players/:id',(req,res)=>{
     })
 })
 app.delete('/players/:id',(req,res)=>{
-    Player.findByIdAndDelete(req.params.id).then(players=>{
+    Player.findByIdAndRemove(
+        {_id: req.params.id}
+        ).then(players=>{
         res.json(players)
     })
 })
