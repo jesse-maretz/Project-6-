@@ -25,6 +25,12 @@ app.get('/players/:id',(req,res)=>{
     })
 })
 
+app.get('/players/name/:name',(req,res)=>{
+    Player.find({name:req.params.name}).then(player=>{
+        res.json(player)
+    })
+})
+
 
 
 
