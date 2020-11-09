@@ -11,7 +11,7 @@ const rosterData = data.map(item=>{
     roster.bats = item.bats;
     roster.throws = item.throws;
     roster.height = `${item.height_feet}'${item.height_inches}"`
-    roster.weight = item.weight
+    roster.weight = `${item.weight} lbs`
     return roster;
 })
 console.log(rosterData)
@@ -27,9 +27,4 @@ Player.deleteMany({})
                 console.log(err)
                 process.exit()
             })
-    })
-/*
-fetch("http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id='642180'")
-    .then(res => res.json())
-    .then(data=>console.log(data.player_info.queryResults.row))
-    */
+    })    
