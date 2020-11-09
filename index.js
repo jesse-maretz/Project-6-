@@ -24,6 +24,20 @@ app.post('/players',(req,res)=>{
         res.json(players)
     })
 })
+app.put('/players/:id',(req,res)=>{
+    Player.findOneAndUpdate(
+        {_id: req.params.id},
+        req.body,
+        {new: true}
+        ).then(players=>{
+        res.json(players)
+    })
+})
+app.delete('/players/:id',(req,res)=>{
+    Player.findByIdAndDelete(req.params.id).then(players=>{
+        res.json(players)
+    })
+})
 
 app.get('/players/:id',(req,res)=>{
     Player.findById(req.params.id).then(player=>{
