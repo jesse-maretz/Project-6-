@@ -10,7 +10,7 @@ const Player = new Schema({
     bats: String,
     throws: String,
     height: String,
-    weight: Number
+    weight: String
 })
 
 module.exports = mongoose.model("Player", Player)

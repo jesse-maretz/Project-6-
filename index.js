@@ -17,12 +17,11 @@ app.get('/players',(req,res)=>{
     Player.find({}).then(players=>{
         res.json(players)
     })
-    res.send(rosterData)
 })
 
-app.get('/players/name/:name',(req,res)=>{
-    Player.find({name:req.params.name}).then(players=>{
-        res.json(players)
+app.get('/players/:id',(req,res)=>{
+    Player.findById(req.params.id).then(player=>{
+        res.json(player)
     })
 })
 
