@@ -19,3 +19,6 @@
 
 /players/name/:name
     GET - find a player from the roster by name
+
+# Description
+In this backend repo I've included paths for full CRUD functionality.
